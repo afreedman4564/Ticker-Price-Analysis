@@ -54,7 +54,7 @@ For Each ws In Worksheets
     ws.Cells(1, 18).Value = "Year Close Price"
     ws.Cells(1, 19).Value = "Percent Change"
     ws.Cells(1, 20).Value = "Total Volume"
-    ws.Cells(1, 21).Value = "Yearch Change"
+    ws.Cells(1, 21).Value = "Yearly Change"
     ws.Cells(1, 24).Value = "Ticker"
     ws.Cells(1, 25).Value = "Value"
     ws.Cells(2, 23).Value = "Greatest % Increase"
@@ -156,12 +156,10 @@ For Each ws In Worksheets
            'format cell color based on whether positive or negative change yearend close Vs year start open
            If ws.Cells(k, 21).Value > 0 Then
                 ws.Cells(k, 21).Interior.ColorIndex = 4
-                ws.Cells(k, 21).NumberFormat = "0.00%"
                 ws.Cells(k, 21).NumberFormat = "#,##0.00"
                 
            ElseIf ws.Cells(k, 21).Value < 0 Then
                 ws.Cells(k, 21).Interior.ColorIndex = 3
-                ws.Cells(k, 21).NumberFormat = "0.00%"
                 ws.Cells(k, 21).NumberFormat = "#,##0.00"
         
            End If
@@ -244,4 +242,3 @@ Next ws
     big_movers.Cells(4, 3).Value = biggestTot
         
 End Sub
-
